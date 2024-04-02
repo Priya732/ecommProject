@@ -46,7 +46,7 @@ exports.getSingleCategory=async(req,res)=>{
         const category=await category_model.find({name:req.params.category_name})
         res.status(200).send(category)
     }
-    catch{
+    catch(err){
         console.log(`Error while getting the category with name=${req.params.category_name}`,err.message)
         res.status(500).send({
             message:"Internal Server Error while getting the category"
