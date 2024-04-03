@@ -40,3 +40,14 @@ exports.updateCart=async(req,res)=>{
         })
     }
 }
+exports.getallCart=async(req,res)=>{
+    try{
+        const cart=await Cart.find({_id:req.params.id})
+        res.status(200).send(cart)
+    }catch(err){
+        console.log("Error while getting cart details.",err)
+        res.status(500).send({
+            message:"Internal Server Error While getting the cart details."
+        })
+    }
+}
