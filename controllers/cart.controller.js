@@ -2,6 +2,8 @@ const Category=require('../models/category.model')
 const Product=require('../models/product.model')
 const Cart=require('../models/cart.model')
 
+
+// Creating a new cart
 exports.createNewCart=async(req,res)=>{
     try{
         const cart=await Cart.create({})
@@ -14,6 +16,8 @@ exports.createNewCart=async(req,res)=>{
         })
     }
 }
+
+// Updating a new Cart
 exports.updateCart=async(req,res)=>{
     try{
         const cart=await Cart.findOne({_id:req.params.id})
@@ -40,6 +44,8 @@ exports.updateCart=async(req,res)=>{
         })
     }
 }
+
+// Getting all information of a cart
 exports.getallCart=async(req,res)=>{
     try{
         const cart=await Cart.find({_id:req.params.id})

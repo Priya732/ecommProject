@@ -82,6 +82,8 @@ exports.editCategory=async(req,res)=>{
         })
     }
 }
+
+// Deleting a Category
 exports.deleteCategory=async(req,res)=>{
     try{
         const category=await category_model.findOne({name:req.params.category_name})

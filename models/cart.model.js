@@ -1,4 +1,8 @@
 const mongoose=require('mongoose')
+/**
+ * products
+ * total_costs
+ */
 
 const cartSchema=new mongoose.Schema({
     products:{
